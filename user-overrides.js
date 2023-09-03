@@ -11,24 +11,6 @@ user_pref("browser.startup.homepage", "about:home");
  * true=Firefox Home (default, see 0105), false=blank page
  * [SETTING] Home>New Windows and Tabs>New tabs ***/
 user_pref("browser.newtabpage.enabled", true);
-/* 0701: disable IPv6
- * IPv6 can be abused, especially with MAC addresses, and can leak with VPNs: assuming
- * your ISP and/or router and/or website is IPv6 capable. Most sites will fall back to IPv4
- * [STATS] Firefox telemetry (Sept 2022) shows ~8% of successful connections are IPv6
- * [NOTE] This is an application level fallback. Disabling IPv6 is best done at an
- * OS/network level, and/or configured properly in VPN setups. If you are not masking your IP,
- * then this won't make much difference. If you are masking your IP, then it can only help.
- * [NOTE] PHP defaults to IPv6 with "localhost". Use "php -S 127.0.0.1:PORT"
- * [TEST] https://ipleak.org/
- * [1] https://www.internetsociety.org/tag/ipv6-security/ (Myths 2,4,5,6) ***/
-user_pref("network.dns.disableIPv6", false);
-/* 0801: disable location bar using search
- * Don't leak URL typos to a search engine, give an error message instead
- * Examples: "secretplace,com", "secretplace/com", "secretplace com", "secret place.com"
- * [NOTE] This does not affect explicit user action such as using search buttons in the
- * dropdown, or using keyword search shortcuts you configure in options (e.g. "d" for DuckDuckGo)
- * [SETUP-CHROME] Override this if you trust and use a privacy respecting search engine ***/
-user_pref("keyword.enabled", true);
 /* 0804: disable live search suggestions
  * [NOTE] Both must be true for the location bar to work
  * [SETUP-CHROME] Override these if you trust and use a privacy respecting search engine
@@ -42,17 +24,17 @@ user_pref("browser.urlbar.suggest.searches", true);
  * [TEST] https://bitmovin.com/demos/drm
  * [1] https://www.eff.org/deeplinks/2017/10/drms-dead-canary-how-we-just-lost-web-what-we-learned-it-and-what-we-need-do-next ***/
 user_pref("media.eme.enabled", true);
-   // user_pref("browser.eme.ui.enabled", false);
+// user_pref("browser.eme.ui.enabled", false);
 /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME]
  * [NOTE] If "history" is true, downloads will also be cleared
  * [NOTE] "sessions": Active Logins: refers to HTTP Basic Authentication [1], not logins via cookies
  * [1] https://en.wikipedia.org/wiki/Basic_access_authentication ***/
-user_pref("privacy.clearOnShutdown.cache", true);     // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.cache", true); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.downloads", false); // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.formdata", true);  // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.history", false);   // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.sessions", true);  // [DEFAULT: true]
-   // user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
+user_pref("privacy.clearOnShutdown.formdata", true); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.history", false); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.sessions", true); // [DEFAULT: true]
+// user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
 /* 4501: enable privacy.resistFingerprinting [FF41+]
  * [SETUP-WEB] RFP can cause some website breakage: mainly canvas, use a site exception via the urlbar
  * RFP also has a few side effects: mainly timezone is UTC0, and websites will prefer light theme
