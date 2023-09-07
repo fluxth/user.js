@@ -57,3 +57,6 @@ user_pref("webgl.disabled", false);
  * [NOTE] This does not clear any passwords already saved
  * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
 user_pref("signon.rememberSignons", false);
+
+// Custom rule: Don't fast fallback to IPv4
+user_pref("network.http.fast-fallback-to-IPv4", false);
