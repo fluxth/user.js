@@ -70,5 +70,8 @@ user_pref("permissions.default.microphone", 2);
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.xr", 2); // Virtual Reality
 
-// Custom rule: Don't fast fallback to IPv4
+// Custom rules:
+// Don't fast fallback to IPv4
 user_pref("network.http.fast-fallback-to-IPv4", false);
+// Open new tab next to current one
+user_pref("browser.tabs.insertAfterCurrent", true);
