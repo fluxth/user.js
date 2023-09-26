@@ -69,9 +69,21 @@ user_pref("permissions.default.camera", 2);
 user_pref("permissions.default.microphone", 2);
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.xr", 2); // Virtual Reality
+/* 0710: enable DNS-over-HTTPS (DoH) [FF60+]
+ * 0=default, 2=increased (TRR (Trusted Recursive Resolver) first), 3=max (TRR only), 5=off (no rollout)
+ * see "doh-rollout.home-region": USA 2019, Canada 2021, Russia/Ukraine 2022 [3]
+ * [SETTING] Privacy & Security>DNS over HTTPS
+ * [1] https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/
+ * [2] https://wiki.mozilla.org/Security/DOH-resolver-policy
+ * [3] https://support.mozilla.org/en-US/kb/firefox-dns-over-https
+ * [4] https://www.eff.org/deeplinks/2020/12/dns-doh-and-odoh-oh-my-year-review-2020 ***/
+user_pref("network.trr.mode", 2); // REMEMBER: Set custom DoH resolver in settings UI
 
 // Custom rules:
 // Don't fast fallback to IPv4
 user_pref("network.http.fast-fallback-to-IPv4", false);
 // Open new tab next to current one
 user_pref("browser.tabs.insertAfterCurrent", true);
+// Enable ECH
+user_pref("network.dns.echconfig.enabled", true);
+user_pref("network.dns.http3_echconfig.enabled", true);
