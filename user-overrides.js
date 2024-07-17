@@ -11,7 +11,7 @@ user_pref("browser.startup.homepage", "about:home");
  * true=Firefox Home (default, see 0105), false=blank page
  * [SETTING] Home>New Windows and Tabs>New tabs ***/
 user_pref("browser.newtabpage.enabled", true);
-/* 0804: disable live search suggestions
+/* 0803: disable live search suggestions
  * [NOTE] Both must be true for the location bar to work
  * [SETUP-CHROME] Override these if you trust and use a privacy respecting search engine
  * [SETTING] Search>Provide search suggestions | Show search suggestions in address bar results ***/
