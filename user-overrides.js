@@ -12,7 +12,7 @@ user_pref("browser.startup.homepage", "about:home");
  * [SETTING] Home>New Windows and Tabs>New tabs ***/
 user_pref("browser.newtabpage.enabled", true);
 /* 0803: disable live search suggestions
- * [NOTE] Both must be true for the location bar to work
+ * [NOTE] Both must be true for live search to work in the location bar
  * [SETUP-CHROME] Override these if you trust and use a privacy respecting search engine
  * [SETTING] Search>Provide search suggestions | Show search suggestions in address bar results ***/
 user_pref("browser.search.suggest.enabled", true);
@@ -26,15 +26,15 @@ user_pref("browser.urlbar.suggest.searches", true);
 user_pref("media.eme.enabled", true);
 // user_pref("browser.eme.ui.enabled", false);
 /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME]
- * [NOTE] If "history" is true, downloads will also be cleared
- * [NOTE] "sessions": Active Logins: refers to HTTP Basic Authentication [1], not logins via cookies
- * [1] https://en.wikipedia.org/wiki/Basic_access_authentication ***/
+ * [NOTE] If "history" is true, downloads will also be cleared ***/
 user_pref("privacy.clearOnShutdown.cache", true); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown_v2.cache", true); // [FF128+] [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.downloads", false); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.formdata", true); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.history", false); // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.sessions", true); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // [FF128+] [DEFAULT: true]
 // user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
+// user_pref("privacy.clearOnShutdown_v2.siteSettings", false); // [FF128+] [DEFAULT: false]
 /* 4501: enable privacy.resistFingerprinting [FF41+]
  * [SETUP-WEB] RFP can cause some website breakage: mainly canvas, use a site exception via the urlbar
  * RFP also has a few side effects: mainly timezone is UTC0, and websites will prefer light theme
